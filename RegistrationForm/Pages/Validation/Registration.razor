@@ -1,0 +1,43 @@
+﻿@page "/registration-form"
+@using RegistrationForm.FormModels.Validation
+@inject NavigationManager NavigationManager
+
+<h3>Registration Form</h3>
+<EditForm Model="@FormModel" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label for="name">Name</label>
+        <InputText id="name" class="form-control" />       
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <InputText id="email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="age">Age</label>
+        <InputNumber id="age" class="form-control" @bind-Value="FormModel.Age" />
+    </div>
+
+    <div class="form-group">
+        <label for="mobile">Mobile Number</label>
+        <InputText id="mobile" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="address">Address</label>
+        <InputTextArea id="address" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+@code {
+    private RegisterDataFormModel FormModel = new RegisterDataFormModel();
+
+    public void HandleValidSubmit()
+    {
+        //Write Your Code Here
+        throw new NotImplementedException();
+    }
+}
